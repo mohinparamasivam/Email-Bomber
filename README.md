@@ -1,4 +1,4 @@
-# Email_Bomber
+# Email Bomber
 
 Use this tool to spam a person's email
 
