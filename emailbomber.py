@@ -66,7 +66,7 @@ try:
         msg = 'From: ' + user + '\nSubject: ' + '\n' + body
         server.sendmail(email,to,msg)
         print "\rE-mails sent: %i" % i
-        time.sleep(1)
+        time.sleep(0.00001)
         sys.stdout.flush()
     server.quit()
     print '\n Done !!!'
