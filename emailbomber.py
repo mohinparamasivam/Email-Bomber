@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python 2.7
 #E-bomber
 #This code for education purpose only.
 #Use it at your own risk !!!
@@ -57,7 +57,7 @@ port = 587
 print ''
 
 try:
-    server = smtplib.SMTP(smtp_server,port) 
+    server = smtplib.SMTP(smtp_server,port)
     server.ehlo()
     server.starttls()
     server.login(email,passwd)
