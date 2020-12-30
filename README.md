@@ -6,10 +6,10 @@ Use this tool to spam a person's email
 
 <h3> Note : Enable Less Secure Access on ur gmail account used to send emails before launching this tool </h3>
 
-Usage : 
+Usage :
 
-1) git clone https://github.com/mohinparamasivam/Email_Bomber.git
-2) cd Email_Bomber
-3) python emailbomber.py
+1) git clone https://github.com/mohinparamasivam/Email_Bomber.git <br/>
+2) cd Email_Bomber <br/>
+3) python2 emailbomber.py or python3 emailbomber3.py
 
-
+<h4>all the dependencies used in this repository are provided by python, so it is not necessary to install any extra package<h4/>
