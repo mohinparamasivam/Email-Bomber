@@ -1,6 +1,8 @@
 #!/usr/bin/python 2.7
+# -*- coding: latin-1 -*-
 #E-bomber
 #This code for education purpose only.
+#UI updates by @utsanjan
 #Use it at your own risk !!!
 
 
@@ -11,26 +13,25 @@ import getpass
 import sys
 import time
 
-print '                                                                    '
-print '                                                                    '
-print '            #################################################       '
-print '            #                                               #       '
-print '            #        Email Bomber ( Spamming Tool )         #       '
-print '            #                                               #       '
-print '            #                  Version 2.0                  #       '
-print '            #                                               #       '
-print '            #           Modified by : Mohin Paramasivam     #       '
-print '            #                                               #       '
-print '            #       Only for Educational Purposes !!        #       '
-print '            #                                               #       '
-print '            #################################################       '
-
-print '                                                                   '
-
-
-print '                                           '
-
+print "\n\n"
+print "         ╔═════════════════════════════════════════════════════════╗"
+print "         ║                                                         ║"
+print "         ║     █▀▀ █▀▄▀█ ▄▀█ █ █░░   █▄▄ █▀█ █▀▄▀█ █▄▄ █▀▀ █▀█     ║"
+print "         ║     ██▄ █░▀░█ █▀█ █ █▄▄   █▄█ █▄█ █░▀░█ █▄█ ██▄ █▀▄     ║"
+print "         ║                                                         ║"
+print "         ║═════════════════════════════════════════════════════════║"
+print "         ║     T H E    E M A I L   S P A M M I N G    T O O L     ║"
+print "         ║     -----------------------------------------------     ║"
+print "         ║                   V E R S I O N: 2.0                    ║"
+print "         ║═════════════════════════════════════════════════════════║"
+print "         ║                                                         ║"
+print "         ║            Modified by : Mohin Paramasivam              ║"
+print "         ║            Only for Educational Purposes!!              ║"
+print "         ║                                                         ║"
+print "         ╚═════════════════════════════════════════════════════════╝"
+print "\n\n"
 print '    '
+
 email = raw_input('Attacker Gmail Address : ')
 print '             '
 user = raw_input('Anonymous name : ')
