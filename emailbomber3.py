@@ -27,7 +27,7 @@ print('\n\n')
 
 user = input('Anonymous name : ')
 email = input('\nAttacker Email Address : ')
-passwd = getpass('\nPassword : ')
+passwd = getpass('\nAttacker Email Password : ')
 to = input('\nVictim Email Address :')
 total = input('\nNumber of send : ')
 body = input('\nMessage : ')
