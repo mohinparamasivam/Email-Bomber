@@ -34,6 +34,7 @@ body = input('\nMessage : ')
 Cserver = input('\nCustom smtp server (leave blank to use gmail): ')
 
 if not Cserver == '':
+    defaulconf = False
     smtp_server = Cserver
     Cport = input('Custom smtp port (leave blank to use defaul port): ')
     if not Cport == '':
@@ -43,6 +44,7 @@ if not Cserver == '':
 else:
     smtp_server = 'smtp.gmail.com'
     port = 587
+    defaultconf = True
 
 try:
     server = smtplib.SMTP(smtp_server, port)
@@ -60,8 +62,13 @@ try:
     print('\n Done !!!')
     sys.exit()
 except KeyboardInterrupt:
-    print ('[-] Canceled')
+    print('[-] Canceled')
     sys.exit()
 except smtplib.SMTPAuthenticationError:
-    print ('\n[!] The username, password or custom STMP server/port you entered is incorrect.')
+    if defaulconf:
+        print('[!] The username or password you entered is incorrect')
+        print('[!] OR')
+        print('[!] You forget to enable less secure access on your google account')
+    else:
+        print('\n[!] The username, password or custom STMP server/port you entered is incorrect.')
     sys.exit()
