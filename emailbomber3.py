@@ -1,4 +1,4 @@
-#!/usr/bin/python 3.9
+#!/usr/bin/python3
 #E-bomber
 #This code for education purpose only.
 #Use it at your own risk !!!
@@ -34,7 +34,7 @@ body = input('\nMessage : ')
 Cserver = input('\nCustom smtp server (leave blank to use gmail): ')
 
 if not Cserver == '':
-    stmp_server = Cserver
+    smtp_server = Cserver
     Cport = input('Custom smtp port (leave blank to use defaul port): ')
     if not Cport == '':
         port = int(Cport)
