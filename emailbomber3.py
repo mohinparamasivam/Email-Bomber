@@ -34,7 +34,7 @@ body = input('\nMessage : ')
 Cserver = input('\nCustom smtp server (leave blank to use gmail): ')
 
 if not Cserver == '':
-    defaulconf = False
+    defaultconf = False
     smtp_server = Cserver
     Cport = input('Custom smtp port (leave blank to use defaul port): ')
     if not Cport == '':
