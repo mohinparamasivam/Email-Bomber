@@ -65,7 +65,7 @@ except KeyboardInterrupt:
     print('[-] Canceled')
     sys.exit()
 except smtplib.SMTPAuthenticationError:
-    if defaulconf:
+    if defaultconf:
         print('[!] The username or password you entered is incorrect')
         print('[!] OR')
         print('[!] You forget to enable less secure access on your google account')
