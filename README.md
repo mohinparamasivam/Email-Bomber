@@ -9,15 +9,15 @@ Use this tool to spam a person's email
 
 Usage for Python 2 : 
 ```bash
-$ git clone https://github.com/mohinparamasivam/Email_Bomber.git
-$ cd Email_Bomber
+$ git clone https://github.com/mohinparamasivam/Email-Bomber.git
+$ cd Email-Bomber
 $ python2 emailbomber.py
 ```
 
 </br>Usage for Python 3 : 
 ```bash
-$ git clone https://github.com/mohinparamasivam/Email_Bomber.git
-$ cd Email_Bomber
+$ git clone https://github.com/mohinparamasivam/Email-Bomber.git
+$ cd Email-Bomber
 $ python3 emailbomber3.py
 ```
 
