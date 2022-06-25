@@ -32,8 +32,12 @@ to = input('\nVictim Email Address :')
 total = input('\nNumber of send : ')
 body = input('\nMessage : ')
 smtp_server = input('\nCustom smtp server: ')
-port = int(input('Custom smtp port (leave blank to use defaul port): '))
+port = input('Custom smtp port (leave blank to use port 587): ')
 
+if not port == '':
+    port = int(port)
+else:
+    port = 587
 
 try:
     server = smtplib.SMTP(smtp_server, port)
