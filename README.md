@@ -4,9 +4,8 @@ Use this tool to spam a person's email
 
 <b> Use this tool for educational purpose only !! </b>
 
-<h3> Note : Enable Less Secure Access on ur gmail account used to send emails before launching this tool </h3>
+<h3> WARNING: This tool is not longer compatible with gmail accounts as attacker</h3>
 
-[You can enable it there](https://myaccount.google.com/lesssecureapps)
 
 Usage for Python 2 : 
 ```bash
