@@ -25,12 +25,12 @@ print('            #                                               #       ')
 print('            #################################################       ')
 print('\n\n')
 
-user = input('Anonymous name : ')
-email = input('\nAttacker Email Address : ')
-passwd = getpass('\nAttacker Email Password : ')
-to = input('\nVictim Email Address :')
-total = input('\nNumber of send : ')
-body = input('\nMessage : ')
+user = input('Anonymous name: ')
+email = input('\nAttacker Email Address: ')
+passwd = getpass('\nAttacker Email Password: ')
+to = input('\nVictim Email Address: ')
+total = input('\nNumber of emails: ')
+body = input('\nMessage: ')
 Cserver = input('\nCustom smtp server (leave blank to use gmail): ')
 
 if not Cserver == '':
