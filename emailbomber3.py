@@ -31,13 +31,21 @@ passwd = getpass('\nAttacker Email Password : ')
 to = input('\nVictim Email Address :')
 total = input('\nNumber of send : ')
 body = input('\nMessage : ')
-smtp_server = input('\nCustom smtp server: ')
-port = input('Custom smtp port (leave blank to use port 587): ')
+Cserver = input('\nCustom smtp server (leave blank to use gmail): ')
 
-if not port == '':
-    port = int(port)
+if not Cserver == '':
+    defaultconf = False
+    smtp_server = Cserver
+    Cport = input('Custom smtp port (leave blank to use defaul port): ')
+    if not Cport == '':
+        port = int(Cport)
+    else:
+        port = 587
 else:
+    smtp_server = 'smtp.gmail.com'
     port = 587
+    defaultconf = True
+
 
 try:
     server = smtplib.SMTP(smtp_server, port)
@@ -58,5 +66,10 @@ except KeyboardInterrupt:
     print('[-] Canceled')
     sys.exit()
 except smtplib.SMTPAuthenticationError:
-    print('\n[!] The username, password or custom STMP server/port you entered is incorrect.')
+    if defaultconf:
+        print('[!] The username or password you entered is incorrect')
+        print('[!] OR')
+        print('[!] You forget to enable less secure access on your google account')
+    else:
+        print('\n[!] The username, password or custom STMP server/port you entered is incorrect.')
     sys.exit()
