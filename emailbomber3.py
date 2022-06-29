@@ -66,8 +66,8 @@ except KeyboardInterrupt:
     print('[-] Canceled')
     sys.exit()
 except smtplib.SMTPAuthenticationError:
-    if defaultconf:
-        print('[!] The username or password you entered is incorrect')
-    else:
-        print('\n[!] The username, password or custom STMP server/port you entered is incorrect.')
+    print('[!] The username or password you entered is incorrect')
+    sys.exit()
+except smtplib.SMTPConnectError:
+    print('\n[!] Failed to connect with the SMTP server')
     sys.exit()
