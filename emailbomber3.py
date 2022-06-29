@@ -68,8 +68,6 @@ except KeyboardInterrupt:
 except smtplib.SMTPAuthenticationError:
     if defaultconf:
         print('[!] The username or password you entered is incorrect')
-        print('[!] OR')
-        print('[!] You forget to enable less secure access on your google account')
     else:
         print('\n[!] The username, password or custom STMP server/port you entered is incorrect.')
     sys.exit()
