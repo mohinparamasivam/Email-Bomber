@@ -1,6 +1,6 @@
 # Email Bomber
 
-Use this tool to spam a person's email
+Spam emails to a single email address
 
 <b> Use this tool for educational purpose only !! </b>
 
@@ -22,7 +22,7 @@ Run it with Python 3:
 $ python3 emailbomber3.py
 ```
 
-## Setup with Gmail account
+## Setup Gmail account
 
 > The instructions are based on [this article](https://support.google.com/accounts/answer/185833)
 
@@ -45,8 +45,27 @@ In this case, in attacker email password i would have to put `swyujgqqgnlwdqqv`
 
 #### Step 3: Enjoy!
 
-> Remember: 2FA must be enabled through the whole process in order for the tool to work
+> Remember: 2FA must be kept enabled.<br>
+> If you disable, it the wont work.
 
-## Support
+# FAQ
+
+### Which email services are supported?
+
+Gmail is the only supported officialy, but playing with smtp custom servers you can configure other email servicces.
+
+### Can it be used anonymously?
+
+No, you need a gmail account to use the tool.
+
+### Do i have to create a google account just to use this tool?
+
+No, but the 2FA requirement can break other google based tools using the same account.
+
+### How do i enable 2FA in a google account?
+
+Check this [Google support guide](https://support.google.com/accounts/answer/185839)
+
+# Support
 
 If you have issues DM or mention [Omicron166 on twitter](https://twitter.com/omicron166) or [Omicon166 on Telegram](https://t.me/omicron166)
