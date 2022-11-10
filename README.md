@@ -4,27 +4,22 @@ Spam emails to a single email address
 
 <b> Use this tool for educational purpose only !! </b>
 
-## Installation
+# Installation
 
 Download the tool:
 ```bash
-$ git clone https://github.com/mohinparamasivam/Email-Bomber.git
-$ cd Email-Bomber
+git clone https://github.com/mohinparamasivam/Email-Bomber.git
 ```
-
-Run it with python 2 (deprecated): 
+OR
 ```bash
-$ python2 emailbomber.py
-```
-
-Run it with Python 3: 
-```bash
-$ python3 emailbomber3.py
+wget https://github.com/mohinparamasivam/Email-Bomber/archive/refs/heads/master.zip
+unzip master.zip
+rm masper.zip
 ```
 
 ## Setup Gmail account
 
-> The instructions are based on [this article](https://support.google.com/accounts/answer/185833)
+> The instructions are based on [this google support article](https://support.google.com/accounts/answer/185833)
 
 #### Step 1: Enable 2FA
 Go to [this link](https://myaccount.google.com/signinoptions/two-step-verification) and follow the steps to enable 2FA
@@ -47,6 +42,18 @@ In this case, in attacker email password i would have to put `swyujgqqgnlwdqqv`
 
 > Remember: 2FA must be kept enabled.<br>
 > If you disable, it the wont work.
+
+# Usage
+
+Run it with Python 3: 
+```bash
+python3 emailbomber3.py
+```
+
+Run it with python 2 (deprecated): 
+```bash
+python2 emailbomber.py
+```
 
 # FAQ
 
