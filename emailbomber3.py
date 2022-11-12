@@ -50,7 +50,19 @@ else:
 try:
     server = smtplib.SMTP(smtp_server, port)
     server.ehlo()
-    server.starttls()
+
+    try:
+        server.starttls()
+    except:
+        # Issue found in termux, can be fixed upgrading the packages
+        print('[!] SSL is not supported by your installation')
+        print('[i] Keep in mind that without ssl, your connection wont be encrypted')
+        print('[i] Check if there is a solution in the FAQs')
+        choice = input('Do you want to continue without SSL? y/n: ').lower()
+        if choice.startswith('n'):
+            print('[-] Exiting...')
+            sys.exit()
+
     server.login(email, passwd)
     for i in range(1, int(total) + 1):
         subject = urandom(9)
